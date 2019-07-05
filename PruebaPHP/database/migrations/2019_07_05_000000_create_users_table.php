@@ -18,7 +18,11 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('password');
-            $table->bigInteger('FK_tipo_usuario');
+            $table->bigInteger('FK_tipo_usuario')->unsigned();
+            $table->foreign('FK_tipo_usuario')
+                ->references('id')
+                ->on('tipo_usuario')
+                ->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });

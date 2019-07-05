@@ -15,8 +15,8 @@ class RolUsuario extends Model
     
     protected $fillable = ['descripcion'];
 
-    public function relacionRolUsuario()
+    public function relacionUsuarioRol()
     {
-        return $this->belongsTo(User::class,'id','FK_tipo_usuario');
+        return $this->hasOne(User::class,'id','FK_tipo_usuario');
     }
 }

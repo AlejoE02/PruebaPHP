@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    
     /**
      * Create a new controller instance.
      *
@@ -20,15 +19,10 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $user = Auth::user();
-        $id = $user->name;
-        return view('home',[
-            'nombre'=>$id,
-        ]);
+        return view('home');
     }
 }
-

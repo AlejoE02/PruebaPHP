@@ -19,6 +19,10 @@ class User extends Authenticatable
         'name', 'email', 'password','FK_tipo_usuario',
     ];
 
+    public function relacionRolUsuario()
+    {
+        return $this->hasOne(RolUsuario::class,'FK_tipo_usuario', 'id');
+    }
     /**
      * The attributes that should be hidden for arrays.
      *
