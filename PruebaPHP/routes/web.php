@@ -18,3 +18,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('Inventario/', [
+    'uses' =>'Controller@Inventario',
+    'as' => 'Controller.inventario'
+]);
+
+Route::get('AgregarProducto/{id?}', [
+    'uses' =>'Controller@AgregarProducto',
+    'as' => 'Controller.AgregarProducto'
+]);
+
+Route::post('AgregarProductos/', [
+    'uses' =>'Controller@AgregarProductos',
+    'as' => 'Controller.AgregarProductos'
+]);
